@@ -19,6 +19,8 @@ jobs:
 
     - name: Setup Chocolatey
       uses: crazy-max/ghaction-chocolatey@v3
+      with:
+        args: -h
 
     - name: Set up MinGW
       run: choco install mingw
