@@ -1,0 +1,29 @@
+name: Compile
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up MinGW
+      run: choco install mingw
+
+    - name: Compile C++ code
+      run: |
+        g++ -o bunnymodXT_Injector.exe src/main.cpp
+
+    - name: Create GitHub release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: bunnymodXT_Injector.exe
