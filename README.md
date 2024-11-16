@@ -1,27 +1,42 @@
-BunnymodXT-Injector
-===================
+# BunnymodXT Injector
 
-A small simple injector for Bunnymod XT. Injects **BunnymodXT.dll** from the directory where the injector is located. Also injects `bxt_rs.dll` if it's present when using the Game start way.
+A small and simple injector for **Bunnymod XT**. It injects **BunnymodXT.dll** from the directory where the injector is located. If present, it will also inject `bxt_rs.dll` when using the "Game start" method.
 
-# How to use
+---
 
-1. Get a Bunnymod XT DLL from [here](https://github.com/YaLTeR/BunnymodXT/releases).
-1. Place it into the same folder as the injector.
+## How to Use
 
-### Standard way
+### Step 1: Download the Bunnymod XT DLL
+
+1. Download the Bunnymod XT DLL from the [releases page](https://github.com/YaLTeR/BunnymodXT/releases).
+2. Place the downloaded DLL into the same folder as the injector.
+
+### Standard Method
+
 1. Run the game.
 2. Run the injector.
 
-### Game start way (you will have to do steps 1-7 only once)
-1. If you don't have a shortcut to your `hl.exe`, create one.
-2. Right click on the shortcut and click *Properties*.
-3. Copy everything from the *Target* field.
-4. You can now delete this shortcut.
-5. Create a shortcut to the injector.
-6. Go into its *Properties*.
-7. Place the cursor in the end of the *Target* field, press space and Ctrl-V (paste), click OK.
-8. You can now use this shortcut to start the game with Bunnymod XT!
+### Game Start Method (One-time setup)
 
-# Additional flags
-- **-dllname <name.dll>** makes the injector inject the given DLL instead of Bunnymod XT. Example: `-dllname bxt_with_cheats.dll`
-- **-processname <name>** makes the injector inject into a process with the given name. Example: `-processname hlds.exe`
+You only need to complete these steps once to create a shortcut that launches the game with Bunnymod XT.
+
+1. If you don't have a shortcut to your `hl.exe`, create one.
+2. Right-click on the shortcut and select **Properties**.
+3. Copy the entire contents of the **Target** field.
+4. You can now delete this shortcut.
+5. Create a new shortcut to the injector.
+6. Right-click on the new shortcut and select **Properties**.
+7. In the **Target** field, place the cursor at the end, press space, and paste the copied target (Ctrl+V). Click **OK**.
+8. Use this new shortcut to launch the game with Bunnymod XT.
+
+---
+
+## Additional Flags
+
+- **-dllname \<name.dll\>**  
+  Injects the specified DLL instead of **BunnymodXT.dll**.  
+  Example: `-dllname bxt_with_cheats.dll`
+
+- **-processname \<name\>**  
+  Injects into a process with the specified name.  
+  Example: `-processname hlds.exe`
