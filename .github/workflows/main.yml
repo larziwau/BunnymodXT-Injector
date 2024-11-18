@@ -13,17 +13,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Setup Chocolatey
-      uses: crazy-max/ghaction-chocolatey@v3
+    - name: Setup Cygwin
+      uses: cygwin/cygwin-install-action@master
       with:
-        args: -h
-
-    - name: Set up MinGW
-      run: choco install mingw
+        packages: "gcc-core"
 
     - name: Compile C++ code
       run: |
-        g++ -o bunnymodXT_Injector.exe src/main.cpp
+        gcc -o bunnymodXT_Injector.exe src/main.cpp
 
     - name: Create GitHub release
       uses: softprops/action-gh-release@v2
