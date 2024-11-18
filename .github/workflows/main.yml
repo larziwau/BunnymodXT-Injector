@@ -13,14 +13,16 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Setup Cygwin
-      uses: cygwin/cygwin-install-action@master
+    - name: Set up GCC
+      uses: egor-tensin/setup-gcc@v1
       with:
-        packages: "gcc-core"
+        version: latest
+        platform: x64
+        cygwin: 1
 
     - name: Compile C++ code
       run: |
-        gcc -o bunnymodXT_Injector.exe src/main.cpp
+        g++ -o bunnymodXT_Injector.exe src/main.cpp
 
     - name: Create GitHub release
       uses: softprops/action-gh-release@v2
