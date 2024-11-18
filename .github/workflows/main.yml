@@ -23,7 +23,7 @@ jobs:
 
     - name: Compile C++ code
       run: |
-        g++ -o bunnymodXT_Injector.exe src/main.cpp
+        g++ -o bunnymodXT_Injector.exe ../src/main.cpp
 
     - name: Create GitHub release
       uses: softprops/action-gh-release@v2
